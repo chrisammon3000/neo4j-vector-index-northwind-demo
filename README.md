@@ -1,5 +1,11 @@
-# neo4j-vector-index-demo
-Basic usage of Neo4j's vector index for similarity search.
+# neo4j-vector-index-northwind-demo
+Basic usage of Neo4j's vector index for similarity search using the Northwind dataset.
+
+## Prerequisites
+Before you begin, make sure to create a `.env` file and add your OpenAI API key.
+```sh
+OPENAI_API_KEY=<your-api-key>
+```
 
 ## Installation
 Create a Python virtual environment and install the required packages.
@@ -60,3 +66,7 @@ YIELD node AS similarProduct, score
 MATCH (similarProduct)
 RETURN DISTINCT similarProduct.productName, score ORDER BY score DESC;
 ```
+
+## References
+- https://neo4j.com/docs/cypher-manual/current/indexes/semantic-indexes/vector-indexes/#indexes-vector-create
+- https://neo4j.com/docs/cypher-manual/current/syntax/parameters/
