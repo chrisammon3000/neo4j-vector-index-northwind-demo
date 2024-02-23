@@ -31,7 +31,7 @@ if __name__ == "__main__":
     product_names = products_df["productName"].to_list()
     product_names_embeddings = cached_embedder.embed_documents(product_names)
 
-    output_csv_path = neo4j_import_dir / "products-embeddings.csv"
+    output_csv_path = neo4j_import_dir / "products.csv"
 
     products_df = products_df.with_columns(
         pl.Series("productNameEmbedding", [ ",".join(map(str, embedding)) for embedding in product_names_embeddings])

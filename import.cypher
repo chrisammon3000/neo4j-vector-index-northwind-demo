@@ -1,5 +1,5 @@
 // Product
-LOAD CSV WITH HEADERS FROM "file:///products-embeddings.csv" AS row
+LOAD CSV WITH HEADERS FROM "file:///products.csv" AS row
 CREATE (n:Product)
 SET n = row,
 n.unitPrice = toFloat(row.unitPrice),
