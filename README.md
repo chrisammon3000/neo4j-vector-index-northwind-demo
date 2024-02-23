@@ -67,6 +67,27 @@ MATCH (similarProduct)
 RETURN DISTINCT similarProduct.productName, score ORDER BY score DESC;
 ```
 
+## Clean Up
+Stop and remove the Neo4j container.
+```sh
+docker stop neo4j
+docker rm neo4j
+```
+
+Deactivate the Python virtual environment.
+```sh
+deactivate
+rm -rf .venv
+```
+
+Remove artifacts.
+```sh
+rm -rf neo4j examples
+```
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 ## References
 - https://neo4j.com/docs/cypher-manual/current/indexes/semantic-indexes/vector-indexes/#indexes-vector-create
 - https://neo4j.com/docs/cypher-manual/current/syntax/parameters/
