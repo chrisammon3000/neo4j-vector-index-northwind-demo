@@ -3,16 +3,13 @@
 # Create the directory if it doesn't exist
 mkdir -p neo4j/import
 
-# Get URLs into a variable
-urls=$(cat import.cypher | grep -o 'https://[^"]*')
-
-echo
-echo $urls
-echo
+# Set the base URL and the files to download
+base_url=https://data.neo4j.com/northwind
+files="products categories suppliers customers orders order-details"
 
 # Loop over the URLs and download each one
-for url in $urls; do
+for file in $files; do
     # Use curl to download the file
     # -L follows redirects
-    curl -L "$url" -o "neo4j/import/$(basename $url)"
+    curl -L "$base_url/$file.csv" -o "neo4j/import/$file.csv"
 done
