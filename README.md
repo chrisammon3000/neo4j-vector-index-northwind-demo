@@ -1,6 +1,9 @@
 # neo4j-vector-index-northwind-demo
 Basic usage of Neo4j's vector index for similarity search using the Northwind dataset.
 
+## Description
+Create a vector index for the `productName` property of the `Product` nodes in the Northwind dataset. Embed a query using the OpenAI API and use the vector index to find similar products.
+
 ## Prerequisites
 Before you begin, make sure to create a `.env` file and add your OpenAI API key.
 ```sh
