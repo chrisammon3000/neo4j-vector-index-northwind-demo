@@ -1,0 +1,6 @@
+.venv*
+.vscode
+neo4j/
+examples/
+.env*
+*cache*
